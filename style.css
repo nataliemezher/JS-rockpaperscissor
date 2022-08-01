@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.content{
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(133, 84, 168);
+}
+.score-board{
+    height: 25vh;
+    color: rgb(234, 231, 228);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.score-board h2{
+    font-size: 25px;
+}
+.score-board p{
+    text-align: center;
+    font-size: 25px;
+    padding: 15px;
+}
+.intro-game{
+    display: flex;
+    height: 40vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: rgb(234, 231, 228);
+    opacity: 0;
+
+}
+.intro-game button, .game-match button{
+    width: 150px;
+    height:50px;
+    border: none;
+    border-radius: 4px;
+    background-color:none ;
+    background-color: rgb(138, 146, 196);
+    color:rgb(234, 231, 228); ;
+    cursor: pointer;
+}
+.game-match{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.winner{
+    font-size: 40px;
+    color: aliceblue;
+    text-align: center;
+}
+.hands, .options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.player-hand{
+    transform: rotateY(180deg);
+}
+div.fadeout {
+    opacity: 0;
+    pointer-events: none;
+}
+div.fadein{
+    opacity: 1;
+    pointer-events: all;
+}
