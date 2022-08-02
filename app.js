@@ -1,5 +1,5 @@
-let playerScore = 0;
-let computerScore = 0;
+let playerScoreing = 0;
+let computerScoreing = 0;
 
 let playButton = document.querySelector(".intro-game button");
 let introShow = document.querySelector(".intro-game");
@@ -11,6 +11,7 @@ function fadeIntro() {
   introShow.classList.add("fadeout");
   match.classList.add("fadein");
 }
+
 function playGame() {
   let options = document.querySelectorAll(".options button");
   let playerHand = document.querySelector(".playerhand");
@@ -21,9 +22,15 @@ function playGame() {
 
   options.forEach((op) => {
     op.addEventListener("click", function () {
-      let computerNum = Math.floor(Math.random() * 3);
+      let computerNum = Math.floor(Math.random() * 3); //012 array
       let computerChoice = computerOption[computerNum];
       //console.log(computerChoice);
+
+      comparingHands(this.textContent, computerChoice);
+
+      //change hand-images
+      playerHand.src = `./imgs/${this.textContent}.png`;
+      computerHand.src = `./imgs/${computerChoice}.png`;
     });
   });
 
@@ -41,31 +48,51 @@ function comparingHands(playerChoice, computerChoice) {
   } else if (playerChoice === "rock") {
     if (computerChoice === "scissors") {
       winner.textContent = "Player wins!";
+      playerScoreing++;
+      updateScore();
       return;
     } else {
       winner.textContent = "Computer wins!";
+      computerScoreing++;
+      updateScore();
       return;
     }
     //checking if PAPER is chosen
   } else if (playerChoice === "paper") {
     if (computerChoice === "scissors") {
-      winner.textContent = "Computer Wins!";
+      winner.textContent = "Computer wins!";
+      computerScoreing++;
+      updateScore();
       return;
     } else {
-      winner.textContent = "Player Wins!";
+      winner.textContent = "Player wins!";
+      playerScoreing++;
+      updateScore();
       return;
     }
   } else if (playerChoice === "scissors") {
     if (computerChoice === "rock") {
-      winner.textContent = "Computer Wins!";
+      winner.textContent = "Computer wins!";
+      computerScoreing++;
+      updateScore();
       return;
     } else {
-      winner.textContent = "Player Wins!";
+      winner.textContent = "Player wins!";
+      playerScoreing++;
+      updateScore();
       return;
     }
   } else {
     return "Something went wrong";
   }
+}
+
+function updateScore() {
+  let playerScore = document.querySelector(".player-score p");
+  let computerScore = document.querySelector(".computer-score p");
+  playerScore.textContent = playerScoreing; //0 at beginning,var from above
+  computerScore.textContent = computerScoreing;
+  //increment these when player/computer wins in function comparingHands
 }
 
 playGame();

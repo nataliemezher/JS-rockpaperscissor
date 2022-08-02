@@ -33,6 +33,9 @@
     
 
 }
+.intro-game h2{
+    font-size: 40px;
+}
 .intro-game button, .game-match button{
     width: 150px;
     height:50px;
@@ -42,6 +45,7 @@
     background-color: rgb(138, 146, 196);
     color:rgb(234, 231, 228); ;
     cursor: pointer;
+    font-size: 25px;
 }
 .game-match{
     position: absolute;
@@ -52,8 +56,8 @@
 }
 
 .winner{
-    font-size: 40px;
-    color: aliceblue;
+    font-size: 45px;
+    color:rgb(234, 231, 228); ;
     text-align: center;
 }
 .hands, .options {
@@ -61,7 +65,7 @@
     justify-content: space-around;
     align-items: center;
 }
-.player-hand{
+.playerhand{
     transform: rotateY(180deg);
 }
 div.fadeout {
